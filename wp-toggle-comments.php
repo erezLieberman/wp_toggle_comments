@@ -10,9 +10,12 @@
  * License:
  */
 
-/* Assign global variabals */
+
+/* Assign global variables */
 $plugin_url = WP_PLUGIN_URL . '/wp-toggle-comments';
 
+
+/* set all the menu stuff in WP admin */
 function wp_toggle_comments_menu(){
 	add_options_page(
 		'wp-toggle-comments options page',
@@ -26,10 +29,12 @@ function wp_toggle_comments_menu(){
 
 add_action('admin_menu' , 'wp_toggle_comments_menu');
 
+
+/* set all the options page stuff in WP admin */
 function wp_toggle_comments_options_page(){
 
 	if(!current_user_can('manage_options')){
-		wp_die('You do not have suggicient permissions to access this page.');
+		wp_die('You do not have sufficient permissions to access this page.');
 	}
 
   global $plugin_url;
@@ -37,6 +42,14 @@ function wp_toggle_comments_options_page(){
 	require ('inc/options-page-wrapper.php');
 
 }
+
+
+/* set all the options page stuff in WP admin */
+function wp_toggle_comments_styles(){
+  wp_enqueue_style('wp_toggle_comments_styles', plugins_url('wp-toggle-comments/wp-toggle-comments.css'));
+}
+
+add_action('admin_head','wp_toggle_comments_styles');
 
 /*$(function(){
   $('.comment-notes').toggle();
