@@ -17,7 +17,9 @@
 						<h3><span>Let's Get Started!</span></h3>
 						<div class="inside">
 
-							<form method="post" action="">
+							<form name="wp_toggle_comments_form" method="post" action="">
+
+								<input type="hidden" name="wp_toggle_comments_form_submitted" value="Y">
 
 								<table class="form-table">
 									
@@ -27,7 +29,7 @@
 									</tr>
 									<tr valign="top">
 										<td scope="row"><label for="tablecell">Option 1</label></td>
-										<td><input name="" id="tablecell" type="text" value="" class="regular-text" /></td>
+										<td><input name="option1" id="tablecell" type="text" value="<?php echo $option1;?>" class="regular-text" /></td>
 									</tr>
 
 									<tr valign="top" class="alternate">
