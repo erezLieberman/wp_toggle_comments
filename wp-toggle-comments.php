@@ -75,7 +75,7 @@ function wp_toggle_comments_options_page(){
 }
 
 
-/* set all the options page styles stuff in WP admin */
+/* set all the options page styles (backend styles) stuff in WP admin */
 function wp_toggle_comments_backend_styles(){
   wp_enqueue_style('wp_toggle_comments_backend_styles', plugins_url('wp-toggle-comments/wp-toggle-comments-backend.css'));
 }
@@ -91,31 +91,43 @@ function wp_toggle_comments_frontend_styles_and_scripts(){
 
 add_action('wp_enqueue_scripts','wp_toggle_comments_frontend_styles_and_scripts');
 
-/*$(function(){
-  $('.comment-notes').toggle();
-  $('.comment-form-author').toggle();
-  $('.comment-form-email').toggle();
-  $('.comment-form-url').toggle();
-  $('.form-submit').toggle();
-  $('.subscribe-to-comments').toggle();
-  $('.comment-subscription-form').toggle();
 
-  $('.comment-form-comment textarea').on('focus',function(){
+/* add shortcode to plugin */
+function wp_toggle_comments_shortcode( $atts , $content = null ){
     
-    if($('.form-submit').css('display') != "block"){
-
-      $('.comment-notes').slideToggle("fast");
-      $('.comment-form-author').slideToggle("fast");
-      $('.comment-form-email').slideToggle("fast");
-      $('.comment-form-url').slideToggle("fast");
-      $('.form-submit').slideToggle("fast");
-      $('.subscribe-to-comments').slideToggle("fast");
-      $('.comment-subscription-form').slideToggle("fast");
-
-    }
+    global $post;
     
-  })
-});*/
+    //parameters of shortcode (optional)
+    /*
+    extract( shortcode_atts( array(
+        'shortcode_option_1' => '5',
+        'display_shortcode' => 'off'
+    ),$atts ) );
+    */
+    
+    //paramter to display or hide
+    
+    /*if($display_shortcode == on){
+        
+        ob_start();
+    
+        //the thing that you want to happen will be here
+        echo "there is!";
 
+        $content = ob_get_clean();
+
+        return $content;
+       
+    }*/
+    
+    /*
+    the shortcode will be look like this:
+    [wp_toggle_comments display_shortcode = "on" shortcode_option_1 = "6"]
+    */
+    
+    
+}
+
+add_shortcode( 'wp_toggle_comments'  , 'wp_toggle_comments_shortcode' );
 
 ?>
