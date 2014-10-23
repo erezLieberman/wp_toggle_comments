@@ -8,12 +8,24 @@
  * Author: Erez LIeberman
  * Author URI: http://studio-hitchadshut.co.il/
  * License:
+ * Text Domain:  wp-toggle-comments
+ * 
  */
 
 
 /* Assign global variables */
 $plugin_url = WP_PLUGIN_URL . '/wp-toggle-comments';
 $options = array();
+
+// Localization
+function ap_action_init()
+{
+load_plugin_textdomain('wp-toggle-comments',  false, basename( dirname( __FILE__ ) ) . '/languages' );
+}
+
+// Add actions
+add_action('init', 'ap_action_init');
+
 
 
 /* set all the menu stuff in WP admin */
@@ -29,6 +41,7 @@ function wp_toggle_comments_menu(){
 }
 
 add_action('admin_menu' , 'wp_toggle_comments_menu');
+
 
 
 /* set all the options page stuff in WP admin */

@@ -1,7 +1,7 @@
 <div class="wrap">
 	
 	<div id="icon-options-general" class="icon32"></div>
-	<h2>WP Toggle Comments Plugin</h2>
+	<h2>WP Toggle Comments Plugin </h2>
 	
 	<div id="poststuff">
 	
@@ -14,7 +14,8 @@
 					
 					<div class="postbox">
 					
-						<h3><span>Let's Get Started!</span></h3>
+						<h3><span>
+                            <?php echo __('Options of wp-toggle-comments','wp-toggle-comments'); ?></span></h3>
 						<div class="inside">
 
 							<form name="wp_toggle_comments_form" method="post" action="">
@@ -23,54 +24,13 @@
 
 								<table class="form-table">
 									
-									<tr>
-										<th class="row-title"><b>Options</b></th>
-										<th><b>Values</b></th>
-									</tr>
 									<tr valign="top">
 										<td scope="row"><label for="tablecell">Option 1</label></td>
 										<td><input name="option1" id="tablecell" type="text" value="<?php echo $option1;?>" class="regular-text" /></td>
 									</tr>
-
-									<tr valign="top" class="alternate">
-										<td scope="row"><label for="tablecell2">option 2 <code>alternate</code></label></td>
-										<td>
-											<select name="" id="tablecell2">
-											<option selected="selected" value="">Example option</option>
-											<option value="">foo</option>
-											</select>
-										</td>
-									</tr>
-
-									<tr valign="top">
-										<td scope="row"><label>option 3</label></td>
-										<td>
-											<fieldset>
-												<legend class="screen-reader-text"><span>input type="radio"</span></legend>
-												<label title='g:i a'><input type="radio" name="example" value="" /> <span>description</span></label><br />
-												<label title='g:i a'><input type="radio" name="example" value="" /> <span>description #2</span></label>
-											</fieldset>
-										</td>
-									</tr>
-
-									<tr valign="top">
-										<td scope="row"><label for="tablecell4">Option 4</label></td>
-										<td>
-											<fieldset>
-												<legend class="screen-reader-text"><span>Fieldset Example</span></legend>
-												<label for="users_can_register">
-													<input name="users_can_register" type="checkbox" id="tablecell4" value="1"  />
-												</label>
-											</fieldset>
-										</td>
-									</tr>
-
-									<tr valign="top">
-										<td scope="row"><label for="tablecell5">Option 5</label></td>
-										<td>
-											<textarea id="tablecell5" name="" cols="80" rows="10">without class</textarea>
-										</td>
-									</tr>
+                                    
+                                    <!-- exmpmle of insert img - for logo or somthing after </br> -->
+							        <!-- <img src="<?php// echo $plugin_url . '/images/img.png'; ?>"> -->
 
 								</table>
 
@@ -78,19 +38,6 @@
 
 							</form>
 
-						</div> <!-- .inside -->
-					
-					</div> <!-- .postbox -->
-
-					<div class="postbox">
-					
-						<h3><span>Alt content if needed</span></h3>
-						<div class="inside">
-							
-							exmpmle of insert img - for logo or somthing after </br>
-							<img src="<?php echo $plugin_url . '/images/img.png'; ?>">
-							
-						
 						</div> <!-- .inside -->
 					
 					</div> <!-- .postbox -->
@@ -106,9 +53,15 @@
 					
 					<div class="postbox">
 					
-						<h3><span>Sidebar Content Header</span></h3>
+						<h3><span><?php echo __('Buy Me A Coffee','wp-toggle-comments'); ?>  :)</span></h3>
 						<div class="inside">
-							Content space
+							<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                            <input type="hidden" name="cmd" value="_s-xclick">
+                            <input type="hidden" name="hosted_button_id" value="7HXX29E426HRJ">
+                            <input type="image" src="https://www.paypalobjects.com/en_US/IL/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                            </form>
+
 						</div> <!-- .inside -->
 						
 					</div> <!-- .postbox -->
