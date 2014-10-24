@@ -32,7 +32,7 @@ add_action('init', 'ap_action_init');
 function wp_toggle_comments_menu(){
 	add_options_page(
 		'wp-toggle-comments options page',
-		'wp-toggle-comments',
+		'WP toggle comments',
 		'manage_options',
 		'wp-toggle-comments',
 		'wp_toggle_comments_options_page'
@@ -52,7 +52,7 @@ function wp_toggle_comments_options_page(){
 	}
 
   global $plugin_url;
-  global $options;
+  global $options;   
 
   //check if the form in options page is submitted
   if(isset($_POST['wp_toggle_comments_form_submitted'])){
@@ -62,10 +62,10 @@ function wp_toggle_comments_options_page(){
     if($hidden_field == "Y"){
       
       //the options that user set in options
-      $option1 = esc_html($_POST['option1']);
+      $using_options = $_POST['using_options'];
 
       //add the options the options array
-      $options['option1']      = $option1;
+      $options['using_options']      = $using_options;
       $options['last_updated'] = time();
 
       update_option( 'wp_toggle_comments' , $options);
@@ -79,13 +79,15 @@ function wp_toggle_comments_options_page(){
 
   if($options != ''){
 
-    $option1 = $options['option1'];
+    $using_options = $options['using_options'];
 
   }
 
 	require ('inc/options-page-wrapper.php');
 
 }
+
+
 
 
 /* set all the options page styles (backend styles) stuff in WP admin */
@@ -98,17 +100,43 @@ add_action('admin_head','wp_toggle_comments_backend_styles');
 
 /* set the frontend styles and scripts*/
 function wp_toggle_comments_frontend_styles_and_scripts(){
-  wp_enqueue_script('wp_toggle_comments_frontend_script', plugins_url('wp-toggle-comments/wp-toggle-comments-frontend.js'),array('jquery'),'', true );
-  wp_enqueue_style('wp_toggle_comments_frontend_styles', plugins_url('wp-toggle-comments/wp-toggle-comments-frontend.css'));
+     
+    //GET OPTIONS FROM DB
+    global $options; 
+    
+    $options = get_option('wp_toggle_comments');
+
+    if($options != ''){
+
+        $using_options = $options['using_options'];
+
+    }
+    
+    // retrieve the options
+    $using_options_to_jquery =  $using_options ;
+
+    // register & enqueue a javascript file called globals.js
+    wp_register_script( 'globals', plugins_url('wp-toggle-comments/wp-toggle-comments-frontend.js'), array('jquery'), '', false );
+    wp_enqueue_script( 'globals' );
+
+    // use wp_localize_script to pass PHP variables into javascript
+    wp_localize_script( 'globals', 'ourPhpVariables', array( using_options_to_jquery => $using_options_to_jquery ) );
+    
+    // styles
+    wp_enqueue_style('wp_toggle_comments_frontend_styles', plugins_url('wp-toggle-comments/wp-toggle-comments-frontend.css'));
+    
 }
 
 add_action('wp_enqueue_scripts','wp_toggle_comments_frontend_styles_and_scripts');
+
 
 
 /* add shortcode to plugin */
 function wp_toggle_comments_shortcode( $atts , $content = null ){
     
     global $post;
+    
+    
     
     //parameters of shortcode (optional)
     /*
@@ -138,9 +166,13 @@ function wp_toggle_comments_shortcode( $atts , $content = null ){
     [wp_toggle_comments display_shortcode = "on" shortcode_option_1 = "6"]
     */
     
+      echo '<div class="have_shortcode"></div>';
     
 }
 
 add_shortcode( 'wp_toggle_comments'  , 'wp_toggle_comments_shortcode' );
+
+
+
 
 ?>

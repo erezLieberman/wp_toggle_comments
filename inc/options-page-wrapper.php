@@ -1,7 +1,7 @@
 <div class="wrap">
 	
 	<div id="icon-options-general" class="icon32"></div>
-	<h2>WP Toggle Comments Plugin </h2>
+	<h2><?php echo __('WP Toggle Comments Form Fields - Plugin','wp-toggle-comments'); ?> </h2>
 	
 	<div id="poststuff">
 	
@@ -14,8 +14,6 @@
 					
 					<div class="postbox">
 					
-						<h3><span>
-                            <?php echo __('Options of wp-toggle-comments','wp-toggle-comments'); ?></span></h3>
 						<div class="inside">
 
 							<form name="wp_toggle_comments_form" method="post" action="">
@@ -25,10 +23,40 @@
 								<table class="form-table">
 									
 									<tr valign="top">
-										<td scope="row"><label for="tablecell">Option 1</label></td>
-										<td><input name="option1" id="tablecell" type="text" value="<?php echo $option1;?>" class="regular-text" /></td>
+										<td scope="row"><label for="using_options"> <?php echo __('Using Options','wp-toggle-comments'); ?></label></td>
+										<td>
+                                            
+                                            
+                                            <select name="using_options" id="">
+                                                
+        <option 
+            <?php
+                if($using_options == "enable_in_all"){echo'selected="selected"'; } ?>
+                value="enable_in_all">
+               <?php echo __('Enable in all posts and pages','wp-toggle-comments'); ?>
+        </option>
+        
+        <option 
+            <?php
+                if($using_options == "enable_in_shortcode_only"){echo'selected="selected"'; } ?>
+                value="enable_in_shortcode_only">
+              <?php echo __('Enable in posts and pages that have shortcode inside','wp-toggle-comments'); ?>
+        </option>
+        
+        <option 
+            <?php
+                if($using_options == 'disable'){echo 'selected="selected"'; } ?>
+                value="disable">
+               <?php echo __('Disable','wp-toggle-comments'); ?>
+        </option>
+
+                                            </select>
+                                           
+
+                                        </td>
 									</tr>
                                     
+
                                     <!-- exmpmle of insert img - for logo or somthing after </br> -->
 							        <!-- <img src="<?php// echo $plugin_url . '/images/img.png'; ?>"> -->
 
