@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WP Toggle Comments\n"
-"POT-Creation-Date: 2014-10-24 13:50+0200\n"
-"PO-Revision-Date: 2014-10-24 13:54+0200\n"
+"POT-Creation-Date: 2014-10-26 11:08+0200\n"
+"PO-Revision-Date: 2014-10-26 11:10+0200\n"
 "Last-Translator: erez lieberman <erez2613@gmail.com>\n"
 "Language-Team: Erez Lieberman <mail@studio-hitchadshut.co.il>\n"
 "Language: he\n"
@@ -19,35 +19,38 @@ msgstr ""
 msgid "WP Toggle Comments Form Fields - Plugin"
 msgstr ""
 
-#: ../wp-toggle-comments/inc/options-page-wrapper.php:18
-msgid "Options"
-msgstr "אפשרויות"
-
-#: ../wp-toggle-comments/inc/options-page-wrapper.php:28
+#: ../wp-toggle-comments/inc/options-page-wrapper.php:26
 msgid "Using Options"
 msgstr "אפשרויות שימוש"
 
 #: ../wp-toggle-comments/inc/options-page-wrapper.php:36
-#: ../wp-toggle-comments/inc/options-page-wrapper.php:37
-#: ../wp-toggle-comments/inc/options-page-wrapper.php:38
 msgid "Enable in all posts and pages"
 msgstr "אפשר בכל הפוסטים והעמודים"
 
 #: ../wp-toggle-comments/inc/options-page-wrapper.php:43
-#: ../wp-toggle-comments/inc/options-page-wrapper.php:44
-#: ../wp-toggle-comments/inc/options-page-wrapper.php:45
 msgid "Enable in posts and pages that have shortcode inside"
 msgstr "אפשר בפוסטים ועמודים שיש בהם שורטקוד"
 
 #: ../wp-toggle-comments/inc/options-page-wrapper.php:50
-#: ../wp-toggle-comments/inc/options-page-wrapper.php:51
-#: ../wp-toggle-comments/inc/options-page-wrapper.php:52
 msgid "Disable"
 msgstr "אל תאפשר"
 
-#: ../wp-toggle-comments/inc/options-page-wrapper.php:86
+#: ../wp-toggle-comments/inc/options-page-wrapper.php:64
+msgid ""
+"If you choose the second option - \"Enable in posts and pages that have "
+"shortcode inside\",</br> you need to add this shortcode : "
+"[wp_toggle_comments] inside the content editor of post ot page"
+msgstr ""
+"אם בחרתם באפשרות השניה - \"אפשר בפוסטים ועמודים שיש בהם שורטקוד \"  - מה "
+"שעליכם לעשות הוא להכניס את השורטקוד הבא: [wp_toggle_comments] לתוך עורך "
+"התוכן בעמוד או בפוסט"
+
+#: ../wp-toggle-comments/inc/options-page-wrapper.php:85
 msgid "Buy Me A Coffee"
-msgstr "קנו לי קפה"
+msgstr "קנו לי קפה (באנגלית זה נשמע יותר טוב - אבל אתם מבינים למה התכוונתי)"
+
+#~ msgid "Options"
+#~ msgstr "אפשרויות"
 
 #~ msgid "Options of wp-toggle-comments"
 #~ msgstr "אפשרויות עבור התוסף wp-toggle-comments"

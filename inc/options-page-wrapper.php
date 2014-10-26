@@ -29,26 +29,26 @@
                                             
                                             <select name="using_options" id="">
                                                 
-        <option 
-            <?php
-                if($using_options == "enable_in_all"){echo'selected="selected"'; } ?>
-                value="enable_in_all">
-               <?php echo __('Enable in all posts and pages','wp-toggle-comments'); ?>
-        </option>
-        
-        <option 
-            <?php
-                if($using_options == "enable_in_shortcode_only"){echo'selected="selected"'; } ?>
-                value="enable_in_shortcode_only">
-              <?php echo __('Enable in posts and pages that have shortcode inside','wp-toggle-comments'); ?>
-        </option>
-        
-        <option 
-            <?php
-                if($using_options == 'disable'){echo 'selected="selected"'; } ?>
-                value="disable">
-               <?php echo __('Disable','wp-toggle-comments'); ?>
-        </option>
+                                    <option 
+                                        <?php
+                                            if($using_options == "enable_in_all"){echo'selected="selected"'; } ?>
+                                            value="enable_in_all">
+                                           <?php echo __('Enable in all posts and pages','wp-toggle-comments'); ?>
+                                    </option>
+
+                                    <option 
+                                        <?php
+                                            if($using_options == "enable_in_shortcode_only"){echo'selected="selected"'; } ?>
+                                            value="enable_in_shortcode_only">
+                                          <?php echo __('Enable in posts and pages that have shortcode inside','wp-toggle-comments'); ?>
+                                    </option>
+
+                                    <option 
+                                        <?php
+                                            if($using_options == 'disable'){echo 'selected="selected"'; } ?>
+                                            value="disable">
+                                           <?php echo __('Disable','wp-toggle-comments'); ?>
+                                    </option>
 
                                             </select>
                                            
@@ -56,11 +56,12 @@
                                         </td>
 									</tr>
                                     
-
+                                   
                                     <!-- exmpmle of insert img - for logo or somthing after </br> -->
 							        <!-- <img src="<?php// echo $plugin_url . '/images/img.png'; ?>"> -->
 
 								</table>
+                                 <h4><?php echo __('If you choose the second option - "Enable in posts and pages that have shortcode inside",</br> you need to add this shortcode : [wp_toggle_comments] inside the content editor of post ot page','wp-toggle-comments'); ?></h4>
 
 							<p><input class="button-primary" type="submit" name="Example" value="<?php _e( 'Save' ); ?>" /> </p>
 
