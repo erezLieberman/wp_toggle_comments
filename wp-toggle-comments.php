@@ -92,7 +92,7 @@ function wp_toggle_comments_options_page(){
 
 /* set all the options page styles (backend styles) stuff in WP admin */
 function wp_toggle_comments_backend_styles(){
-  wp_enqueue_style('wp_toggle_comments_backend_styles', plugins_url('wp-toggle-comments/wp-toggle-comments-backend.css'));
+  wp_enqueue_style('wp_toggle_comments_backend_styles', plugins_url('wp-toggle-comments/css/wp-toggle-comments-backend.css'));
 }
 
 add_action('admin_head','wp_toggle_comments_backend_styles');
@@ -116,14 +116,14 @@ function wp_toggle_comments_frontend_styles_and_scripts(){
     $using_options_to_jquery =  $using_options ;
 
     // register & enqueue a javascript file called globals.js
-    wp_register_script( 'globals', plugins_url('wp-toggle-comments/wp-toggle-comments-frontend.js'), array('jquery'), '', false );
+    wp_register_script( 'globals', plugins_url('wp-toggle-comments/js/wp-toggle-comments-frontend.js'), array('jquery'), '', false );
     wp_enqueue_script( 'globals' );
 
     // use wp_localize_script to pass PHP variables into javascript
     wp_localize_script( 'globals', 'ourPhpVariables', array( using_options_to_jquery => $using_options_to_jquery ) );
     
     // styles
-    wp_enqueue_style('wp_toggle_comments_frontend_styles', plugins_url('wp-toggle-comments/wp-toggle-comments-frontend.css'));
+    wp_enqueue_style('wp_toggle_comments_frontend_styles', plugins_url('wp-toggle-comments/css/wp-toggle-comments-frontend.css'));
     
 }
 

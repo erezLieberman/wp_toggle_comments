@@ -14,6 +14,8 @@ Toggle The Comments Form Fields On WP Posts And Pages
 == Description ==
 
 This very simple plugin Toggle the comments form fields smoothly.
+After you upload and activate the plugin the comments forms on your site will look like this:
+<img src="images/preview.gif">
 
 == Installation ==
 
