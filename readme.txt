@@ -12,9 +12,13 @@ Toggle The Comments Form Fields On Wordpress Posts And Pages
 
 
 == Description ==
-This very simple plugin Toggle the comments form fields smoothly.
+This very simple plugin Hides the top three fields (author, email, and website) in comment form and after you will click on the big comment field this three fields will be open smoothly.
+
 After you upload and activate the plugin the comments forms on your site will look like this:
 `[youtube https://www.youtube.com/watch?v=SIZOk0WA3sE]`
+
+in the [screenshoot section](https://wordpress.org/plugins/wp-toggle-comments-form-fields/screenshots/) you can look on the first screenshot  - it's a litlle animated gif that illustrates the effect.
+You can see a live preview of this plugin in [my site](http://www.studio-hitchadshut.co.il/%D7%AA%D7%95%D7%A1%D7%A3-%D7%97%D7%93%D7%A9-%D7%A9%D7%A4%D7%99%D7%AA%D7%97%D7%AA%D7%99-%D7%9C%D7%90%D7%AA%D7%A8%D7%99-%D7%95%D7%95%D7%A8%D7%93%D7%A4%D7%A8%D7%A1-wp-toggle-comments-form/), this is a blog post(in hebrew) about my plugin, in the comments form(bottom of page) of this post you can see how its look like with this plugin.
 
 = Languages =
 1. English
@@ -46,8 +50,9 @@ In the WordPress admin area go to Settings > "WP toggle comments" and set the op
 
 
 == Screenshots ==
-1. A preview of the Setting Page
-2. A preview of Post With Shortcode.
+1. A preview of the comments form after you activate the plugin
+2. A preview of the Setting Page
+3. A preview of Post With Shortcode.
 
 
 == Changelog ==
